@@ -17,3 +17,15 @@ function alternatingCharacters(s) {
     }
 
 }
+
+//Alternative solution 
+s= s.split("")
+//const N = s.length
+let deletetiions= 0;
+
+for(let i = 0; i < s.length -1; i++){
+    if(s[i] === s[i+1]){
+        deletetions ++
+    }
+    return deletetions;
+}
