@@ -1,7 +1,7 @@
 
 function maximumToys(prices,k) {
     //Items they can buy
-    let sort = ((a,b) => a-b);
+    let sort = ((a,b) => a - b);
     let count = 0;
     sort.forEach(price =>{
         if( k > price) {
