@@ -4,16 +4,6 @@ function whatFlavors(cost, money) {
     // if statement with the cost i, j. 
     // sort the values
     // map in js one way to get the evaluation.
-    
-   // let arr=[];
-   // arr.sort(( a , b ) =>  a - b)
-    // forloops 
-    //for(let i = 0; i > cost.length; i++){
-     //   cost[i]++;
-      //  for(let j=0; j > money.length; j++){
-       // m = money[j] == cost[i];
-   // }
-//}
     // Write your code here
     // hashMap
     let flavor = {}
@@ -28,6 +18,7 @@ function whatFlavors(cost, money) {
     }
     for(let j of cost){
         if(flavor[money - j ]){
+            if(t === money - t)
             if(flavor[j].length > 1){
                 console.log(flavor[j][0], flavor[j][1])
                 return
