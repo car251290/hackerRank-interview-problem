@@ -2,7 +2,7 @@
 function fizzBuzz (num) {
     for(let i = 1; i <= num.length; i++){
         if(i % 3 === 0 && i % 5 === 0){
-            return ('FozzBuzz')
+            return ('FizzBuzz')
         } else if (i % 3 === 0) {
             return ('FIZZ')
 
