@@ -45,11 +45,12 @@ function biggerIsGreater(w) {
      }
      return new String(arrchart);
     }  
-    
+    // swap a place using this code and get the nextsmall fist index
+    // get the next small index
     const swapt = (arrchart,i,j) => {
       let temp = arrchart[i];
-      arrchart[i] =arrchart[j]
-      arrchart[j] = temp;
+      arrchart[i] =arrchart[j+1]
+      arrchart[j+1] = temp;
     }
 
      //for(let j = 1; j < w.length - 1; j++){
