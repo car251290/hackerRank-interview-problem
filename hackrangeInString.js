@@ -26,16 +26,23 @@ function hackerrankInString(s) {
     // Write your code here
  let hackString = "hackerrank".split("");
  let input = s.split("");
- let j =0;
- if(input.length < hackString.length){
+ let j = 0;
+ let inputString = input.length;
+ let hackduplicate = hackString.length;
+
+ if(inputString < hackduplicate){
      return "NO";
  } 
- for(let i = 0; i < input.length; i++){
+ for(let i = 0; i < inputString; i++){
      if(input[i] === hackString[j]){
          j++
      }
- }
- return j === hackString.length ? "YES" : "NO"
+ } if(j === hackduplicate){
+    return "Yes"
+
+ } else {
+    "No"
+ } 
  
 }
 
