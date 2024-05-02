@@ -8,23 +8,43 @@ function workBook(n,k,arr){
 // the page number index start with 1
 // The first page will hold  problems for chapter . Problem  is on page , so it is special. Page  contains only Chapter , Problem , so no special problem is on page . Chapter  problems start on page  and there are  problems. Since there is no problem  on page , 
 //there is no special problem on that page either. There is  special problem in her workbook.
-
 // let count number of special number
-
-
 // function 
 // workbook has this parameters
 // n number of characters
 // k is the maximimum number of problems perpage
 // arr[n] the number of problems in each charapter
-arr= [];
-    
-for(let i =0; i<arr.length; i++){
-    const bookread = arr[i];
-    if(bookread[k] == bookread[n]){
-        return book[n]
-    }
-    
-}
+// page one will be arr[0+1]
+// page two will be arr[1+1]
 
+obj ={};
+// this one will create a obj to tell us how many problems each character has.
+let numberpage = 0;
+for(let i= 0; i < n; i++){
+    numberpage++;
+    obj[i+1] = []
+    //create an arr to march number
+    let problemCharapter = arr[i]
+    for(let index = 1; index <= problemCharapter; index++ ){
+        obj[i + 1].push([problemCharapter, numberpage]);
+        //once you have checked the num of problems in each charapter is as the problem gives you then do the 
+        //logic to enter the page num adding the condition that if the problem is divisible by k,add 1 to the next num and also if starting a new chapter, add 1
+        if(index % k === 0 && index !== problemCharapter){
+            numberpage++
+        }
+    }
+}
+// but we can set the number of charapters so we have to loop the number of the chapter with forloop
+function sameValue(pairArray){
+    return pairArray[0] === pairArray[1];
+}
+// then filter the empaty array no need to push it,spread the array that is in the entire array out with the spreat operator.
+let pairArray = []
+for( let chapter in obj){
+    let filterArray = obj[chapter].filter(sameValue)
+    if(filterArray.length > 0){
+        pairArray.push(...filterArray);
+    }   
+}
+return pairArray.length;
 }

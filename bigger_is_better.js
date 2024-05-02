@@ -10,7 +10,7 @@ function biggerIsGreater(w) {
     // it must be the smallest word that meets the first condition
     // the word is abdc 
     // if not possible return no
-    let arrchart,n,endindex
+  let arrchart,n,endindex
 
   w = [];
   arrchart = w.split('');
@@ -28,7 +28,7 @@ function biggerIsGreater(w) {
      // If no such character cannot be fine, then all characters are in descending order
      // means there cannot be a greater string with same set of characters
      if(endindex == 0){
-        console.log("it not answer")
+        console.log("it the not answer")
      } else {
         let firstSmallchar = arrchart[endindex - 1]
         let nextSmaller = endindex;
@@ -52,16 +52,7 @@ function biggerIsGreater(w) {
       arrchart[i] =arrchart[j+1]
       arrchart[j+1] = temp;
     }
-
-     //for(let j = 1; j < w.length - 1; j++){
-            // it will swap the code!! 
-      //      let swap = sort[j];
-        //    sort[i] = sort[j]
-          //  sort[j] = swap;
-
-
-        //}
-        //return swap; 
+    return swapt;
 
 }
 
