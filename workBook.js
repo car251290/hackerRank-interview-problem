@@ -2,7 +2,6 @@
 'use strict'
 function workBook(n,k,arr){
  // https://www.hackerrank.com/challenges/lisa-workbook/problem?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=24-hour-campaign
-
 //page will never containe more than problem that has been use it in other pages.
 //each chapter starts on a new page so a page will never contain problem from more than one chapter
 // the page number index start with 1
@@ -25,11 +24,11 @@ for(let i= 0; i < n; i++){
     obj[i+1] = []
     //create an arr to march number
     let problemCharapter = arr[i]
-    for(let index = 1; index <= problemCharapter; index++ ){
-        obj[i + 1].push([problemCharapter, numberpage]);
+    for(let problem = 1; problem <= problemCharapter; problem++ ){
+        obj[i + 1].push([problem, numberpage]);
         //once you have checked the num of problems in each charapter is as the problem gives you then do the 
         //logic to enter the page num adding the condition that if the problem is divisible by k,add 1 to the next num and also if starting a new chapter, add 1
-        if(index % k === 0 && index !== problemCharapter){
+        if(problem % k === 0 && problem !== problemCharapter){
             numberpage++
         }
     }
@@ -39,12 +38,13 @@ function sameValue(pairArray){
     return pairArray[0] === pairArray[1];
 }
 // then filter the empaty array no need to push it,spread the array that is in the entire array out with the spreat operator.
-let pairArray = []
+let pairArraySlot = []
 for( let chapter in obj){
     let filterArray = obj[chapter].filter(sameValue)
+    // console.log(filterArray)
     if(filterArray.length > 0){
-        pairArray.push(...filterArray);
+        pairArraySlot.push(...filterArray);
     }   
 }
-return pairArray.length;
+return pairArraySlot.length;
 }
