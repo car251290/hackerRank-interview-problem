@@ -33,12 +33,13 @@ for(let i= 0; i < n; i++){
         }
     }
 }
-// but we can set the number of charapters so we have to loop the number of the chapter with forloop
+// create a function and see if they match 
 function sameValue(pairArray){
     return pairArray[0] === pairArray[1];
 }
 // then filter the empaty array no need to push it,spread the array that is in the entire array out with the spreat operator.
 let pairArraySlot = []
+// but we can set the number of charapters so we have to loop the number of the chapter with forloop
 for( let chapter in obj){
     let filterArray = obj[chapter].filter(sameValue)
     // console.log(filterArray)
