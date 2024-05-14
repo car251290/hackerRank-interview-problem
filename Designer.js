@@ -1,27 +1,37 @@
 'use strict'
 
-// Designer PDF 
+// Designer PDF
+function getIndex(char){
+  IndexAlphabeth = [...'abcdefghijklmnopqrstuvwxyz'];
+  // to get the index of each letter of the alphabeth
+  return IndexAlphabeth.indexOf(char);
+}
+
 
 function designerPdfViewer(h,word){
-    // a is index 0 and z is index 25
-// assuming all the letter are 1 mm 
+  //`https://www.hackerrank.com/challenges/designer-pdf-viewer/problem?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=24-hour-campaign`
+let words = word.length;
+let heightLetter = []; maxLetter = 0;
+for(let i = 0; i< words; i++){
+  heightLetter.push(h[getIndex(word[i])]);
+
+}
+maxValue = Math.max(...heightLetter);
+return(words * maxValue)
+
+}
 
 
-h = [26];
-// method to [a-z]
-// the second line container is for lowercase 
-
-
-// the word abc and the a=1,b=3,c=1
-// so it will be 3 * 1 mm and will be 9 mm 
-
-
-
-
-//https://www.hackerrank.com/challenges/designer-pdf-viewer/problem?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=24-hour-campaign
-
-
-
-
-
+// solution 2
+function designerPdfViewer2(word,h){
+  let  IndexAlphabeth = [...'abcdefghijklmnopqrstuvwxyz']; // get the destructuring of the A-Z
+  let words = word.length; // get the length of the letter
+  let heightLetter = [];// empty array to push the number letter
+  let MaxLetter = 0 // it will start with 0 because it will be the max letter  3 *3 = 9 count
+  for(let i =0; i<words; i++){
+      let index = IndexAlphabeth.indexOf(word[i]); // convert the letter to number.
+       heightLetter.push(h[index])   // push the result to a new array of letter
+  }
+  MaxLetter = Math.max(...heightLetter); // get the max number of letter using destructuring
+  return (words * MaxLetter); // return the result of the multiplication of the letter and the max letter. 
 }
