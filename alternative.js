@@ -8,6 +8,7 @@ let max = 0;
 let unique = s.split('').filter((item, i, arr) => arr.indexOf(item) === i);
 //console.log(unique);    
     for(let i = 0; i < unique.length; i++){
+        unique.forEach((item,i,arr)=> console.log(item,i, arr));
         for(let j = i + 1; j < unique.length; j++){
             let filtered = s.split('').filter((item) => item === unique[i] || item === unique[j]);
             if(filtered.every((item, i, arr) => item === arr[0])){
