@@ -10,20 +10,27 @@ function flatlandSpaceStations(n, c) {
    
 
    // The maximum distance is  unit.
-   for(let i = 0; i<n.length; i++){
-      let max = 0;
-      for(let j= 0; j<c.length; j++ ){
-         let distance = Math.abs(i -c[j]);
-         if(distance > max){
-            max = distance;
-         }
-         console.log(max);
-      }
+   
+   // The distance to the nearest space station for each city is listed below:
+// Sort the array of space stations to ensure they are in ascending order
+   c.sort((a,b) => a-b);
+   let maxDistance = 0;
+   let distance = 0;
+   // Distance from the first city to the first space station
+   const firstCity = c[0];
+
+   maxDistance = Math.max(firstCity,maxDistance);
+   // Calculate the maximum distance between consecutive space stations
+   // check the maximum distance between the first city and the first space
+   for(const city of c){
+      const midCity = Math.floor((city - distance)/2);
+      maxDistance = Math.max(maxDistance,midCity);
+      distance = city;
    }
+    // Distance from the last space station to the last city
+   // check the last city distance
+   const lastCityDistance = n - distance -1;
+   maxDistance = Math.max(maxDistance,lastCityDistance);
+   return maxDistance;
 
 }
-
-
-
-
-
