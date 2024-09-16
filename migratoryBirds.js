@@ -1,5 +1,6 @@
 'use strict';
-
+// function migratoryBirds 
+// complete the migratiory birds 
 function migratoryBirds(arr){
    let bird = {};
    let max =0;
