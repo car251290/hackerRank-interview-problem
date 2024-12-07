@@ -1,19 +1,15 @@
-function catAndMouse(x, y, z) {
-    // if cat A catch the mouse print Cat A
-    // if cat B catch the mouse print Cat B 
-    // if both cat catch the mouse print Mouse C
-
-    x = Math.abs(x - z);
-    y = Math.abs(y - z);
-    z = Math.abs(x - y);
-    if (x < y) {
-        return 'Cat A';
-    }
-    if (x > y) {
-        return 'Cat B';
-    } else {
+function catAndMouse(x,y,z){
+    let catA = Math.abs(a-z);
+    let catB =Math.abs(y-z);
+    if(catA === catB){
         return 'Mouse C';
+    } else if(catA < catB){
+        return 'Cat A';
+    } else {
+        return 'Cat B';
     }
-}
 
-console.log(catAndMouse(1, 2, 3)); // Cat B
+}
+console.log(catAndMouse(1,2,3)); // Cat B
+console.log(catAndMouse(1,3,2)); // Mouse C
+console.log(catAndMouse(1,5,2)); // Cat A
