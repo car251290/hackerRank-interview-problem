@@ -1,10 +1,12 @@
-function minimumAbsoluteDifference(arr) {
-    let min = Number.POSITIVE_INFINITY
-
-    arr.sort((a , b) => a - b)
-
-    for(let i = 0; i< arr.lenght -1; i++){
-        min = Math.min(min,arr[i+1] - arr[i])
+function minimumAbsoluteDifference(arr){
+    let minDifference = Infinity;
+    arr.sort((a, b) => a - b);
+    for(let i = 0; i < arr.length - 1; i++){
+        const difference = Math.abs(arr[i] - arr[i + 1]);
+        if(difference < minDifference){
+            minDifference = difference;
+        }
     }
-    return min
+    return minDifference;
+   
 }
