@@ -1,28 +1,24 @@
-`https://www.hackerrank.com/challenges/minimum-time-required/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=search`
-'use strict'
 
-
-function minTime(machines,goal){
-
-let minDays = 0;
-let maxDays = Math.max(...machines) * goal;
-while(minDays < maxDays){
-    let midDays = Math.floor((minDays + maxDays)/2);
-
-    let totalItems = 0;
-
-    for(let machine of machines){
-        totalItems += Math.floor(midDays/machine);
+'use strict';
+function minTime(machines,goal) {
+let left = 1;
+let right = Math.max(...machines) * goal;
+let result = right;
+while(left <= right){
+    const mid = Math.floor((left + right) /2);
+    let total = machines.reduce((acc, machine) => {
+        return acc + Math.floor(mid / machine);
+    })
+    if(total >= goal){
+        result = mid;
+        right = mid -1;
 
     }
-    if(totalItems >= goal){
-        maxDays = minDays + 1;
-    } else {
-        maxDays = midDays
+    else {
+        left = mid + 1;
     }
 
 }
-return minDays;
-
-
+return result;  
+    
 }
